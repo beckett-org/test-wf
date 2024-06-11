@@ -1,10 +1,10 @@
-name: Octo Organization CI
+name: List files
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ '*' ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ '*' ]
 
 jobs:
   build:
@@ -13,5 +13,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo Hello from Octo Organization
+      - name: List files in the runner directory
+        run: ls -l
